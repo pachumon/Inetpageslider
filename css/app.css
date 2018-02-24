@@ -1,0 +1,159 @@
+﻿html,
+body {
+    height: 100%;
+    /* The html and body elements cannot have any padding or margin. */
+}
+
+#title { color: #fff; }
+
+/* Wrapper for page content to push down footer */
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /* Negative indent footer by its height */
+    margin: 0 auto -50px;
+    /* Pad bottom by footer height */
+    padding:50px 0 0 50px;    
+}
+
+#footer {
+    /* Set the fixed height of the footer here */
+    height: 50px;
+    background-color: #080808;
+    margin-top: 15px;
+}
+
+/* apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+    #footer {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+#wrap > .container-fluid {
+    padding: 60px 15px 10px;
+}
+
+#footer > .container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#footer p {
+    margin-bottom: 0;
+}
+
+.has-error { color: #a94442; }
+
+/* For angular UI bootstrap: https://angular-ui.github.io/bootstrap/ */
+.nav, .pagination, .carousel, a, th, select { cursor: pointer; }
+
+.horizontal-collapse { height: 70px; }
+
+.navbar-collapse.in { overflow-y: hidden; }
+
+/* end */
+
+.mr-10 { margin-right: 10px; }
+
+.w-7p { width: 7%; }
+
+.st-sort-ascent::before {
+    content: '\25B2';
+}
+
+.st-sort-descent::before {
+    content: '\25BC';
+}
+
+.select-page {
+    width: 50px;
+    text-align: center;
+}
+
+.pagination li a input {
+    padding: 0;
+    margin: -3px 0;
+}
+
+/*.has-error { color: red; }*/
+
+.drop-box {
+    background: #F8F8F8;
+    border: 5px dashed #DDD;
+    width: 290px;
+    height: 150px;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+    cursor: pointer;
+}
+.dragover {
+    border: 5px dashed green;
+}
+
+
+@-webkit-keyframes glyphicon-spin-r {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+.glyphicon.normal-right-spinner {
+    -webkit-animation: glyphicon-spin-r 2s infinite linear;
+    animation: glyphicon-spin-r 2s infinite linear;
+}
+
+@keyframes glyphicon-spin-r {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}.drop-box-success {
+    background: lightgreen;
+    border: 5px dashed green;
+    width: 290px;
+    height: 150px;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+    cursor: pointer;
+}
+
+.drop-box-failure {
+    background: lightcoral;
+    border: 5px dashed red;
+    width: 290px;
+    height: 150px;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+    cursor: pointer;
+}
+
+
+.bordered{
+    border: 2px solid #508191;    
+}
+.mt25{
+    margin-top: 25px;        
+}
+
+.eventcontent{
+    padding: 0px 60px 0px 50px;
+}
