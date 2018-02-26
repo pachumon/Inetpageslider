@@ -183,9 +183,10 @@ body {
 }
 .eventcontent .eventinfo{
     cursor: pointer;
+    font-weight: bold;
 }
 .eventcontent .eventinfo:hover{
-    color: rgb(18, 72, 104);  
+    color: rgb(135, 192, 224);  
     text-decoration: underline;  
     font-weight: bold;  
 }
