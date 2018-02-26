@@ -146,14 +146,82 @@ body {
     cursor: pointer;
 }
 
+/* below this all styles are for the eventslider */
+.bold{
+    font-weight: bold;
+}
 
 .bordered{
     border: 2px solid #508191;    
+    border-radius: 5px;
 }
 .mt25{
-    margin-top: 25px;        
+    margin-top: 10px;        
 }
 
 .eventcontent{
     padding: 0px 60px 0px 50px;
+    min-height: 110px;
+    color: #703c3c
 }
+.eventcontent .header1{    
+    background: linear-gradient(rgb(238, 203, 203), rgb(231, 161, 161));
+    /* background: linear-gradient(-90deg,rgb(169, 235, 235), rgb(216, 146, 169)); */
+        
+}
+.header1 span,.header2 span,.header3 span{
+    font-family: "Brush Script MT", cursive;
+    font-size: 25px;
+}
+.eventcontent .header2{    
+    background: linear-gradient(rgb(196, 228, 214), rgb(179, 201, 188));
+    /* background: linear-gradient(-90deg,rgb(104, 219, 167), rgb(234, 240, 133)); */
+}
+.eventcontent .header3{    
+    background: linear-gradient(rgb(196, 210, 228), rgb(155, 181, 211));
+    /* background: linear-gradient(90deg,rgb(240, 189, 155), rgb(224, 182, 243)); */
+}
+.eventcontent .eventinfo{
+    cursor: pointer;
+}
+.eventcontent .eventinfo:hover{
+    color: rgb(18, 72, 104);  
+    text-decoration: underline;  
+    font-weight: bold;  
+}
+
+.topnavigator{
+    width: 78px;
+    text-align: center;
+    /* background-color: #959595; */
+    background-color: #443f3f;
+    opacity: 0.6;
+    color: rgb(218, 219, 215);
+    font-weight: bold;  
+    transition-duration: 0.4s;    
+    
+}
+
+.topnavigator:hover{
+    color: #fff;
+    opacity: 1;
+    box-shadow: 0 5px 15px rgba(5, 41, 43, 0.4);
+}
+
+.mainheader{
+    background-color: #d4c8c8;    
+    color:rgb(31, 27, 27);
+}
+
+.monthname{
+    background-color: rgb(212, 228, 235);    
+    transition-duration: 0.4s; 
+}
+
+.monthname:hover{
+    color: rgb(179, 107, 107);        
+}
+
+
+
+
