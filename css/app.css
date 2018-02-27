@@ -186,7 +186,7 @@ body {
     font-weight: bold;
 }
 .eventcontent .eventinfo:hover{
-    color: rgb(135, 192, 224);  
+    color: #1c7db6 ;
     text-decoration: underline;  
     font-weight: bold;  
 }

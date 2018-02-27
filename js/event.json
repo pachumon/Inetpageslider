@@ -1,0 +1,14 @@
+{
+    "eventId": 0,
+    "eventTitle": "sample vent",
+    "eventDate": "2018-02-26T00:00:00",
+    "eventTypeId": 1,
+    "createdBy": "khaled",
+    "updatedBy": null,
+    "createdOn": "2018-02-26T13:36:01.88",
+    "updatedOn": "0001-01-01T00:00:00",
+    "recurrence": false,
+    "endBy": "0001-01-01T00:00:00",
+    "eventText": "sample event",
+    "eventAttchaments": null
+}

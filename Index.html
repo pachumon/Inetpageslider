@@ -14,6 +14,7 @@
     <script src="js/moment/moment.min.js"></script>    
     <script src="js/eventContent.js"></script>
     <script src="js/bootstrap/3.3.7/Scripts/bootstrap.js"></script>
+    <script src="js/lodash/lodash.js"></script>
     <meta name="description" content="SampleApp">
 </head>
 
@@ -52,7 +53,7 @@
                             <div class="bordered mt25 topnavigator">
                                 <span>
                                     Scroll <br>
-                                    <span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Left <span>March</span></span>
+                                    <span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Left <span id="pastmonth">March</span></span>
                             </div>
                         </div>
                         <div class="col-lg-8">
@@ -61,17 +62,17 @@
                             </div>
                             <div class="col-lg-12">
                                 <div class="bordered mt25 col-lg-2 text-center col-lg-offset-1 monthname bold">
-                                    April
+                                   <span id="currentmonth">April</span>
                                 </div>
                                 <div class="bordered mt25 col-lg-2 text-center col-lg-offset-6 monthname bold">
-                                    May
+                                    <span id="nextmonth">May</span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-1">
                             <div class="bordered mt25 topnavigator">
                                 Scroll Right
-                                <span class="glyphicon glyphicon-chevron-right"></span> <span>June</span>
+                                <span class="glyphicon glyphicon-chevron-right"></span> <span id="futuremonth">June</span>
                             </div>
                         </div>
                     </div>
