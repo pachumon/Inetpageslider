@@ -10,8 +10,8 @@
     <link rel="icon" href="./favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="js/bootstrap/3.3.7/Content/bootstrap.css">
     <link rel="stylesheet" href="css/app.css">
-    <script src="js/jquery/jquery-3.1.1.js"></script>    
-    <script src="js/moment/moment.min.js"></script>    
+    <script src="js/jquery/jquery-3.1.1.js"></script>
+    <script src="js/moment/moment.min.js"></script>
     <script src="js/eventContent.js"></script>
     <script src="js/bootstrap/3.3.7/Scripts/bootstrap.js"></script>
     <script src="js/lodash/lodash.js"></script>
@@ -52,8 +52,11 @@
                         <div class="col-lg-1">
                             <div class="bordered mt25 topnavigator">
                                 <span>
-                                    Scroll <br>
-                                    <span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Left <span id="pastmonth">March</span></span>
+                                    Scroll
+                                    <br>
+                                    <span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Left
+                                    <span id="pastmonth">March</span>
+                                </span>
                             </div>
                         </div>
                         <div class="col-lg-8">
@@ -62,7 +65,7 @@
                             </div>
                             <div class="col-lg-12">
                                 <div class="bordered mt25 col-lg-2 text-center col-lg-offset-1 monthname bold">
-                                   <span id="currentmonth">April</span>
+                                    <span id="currentmonth">April</span>
                                 </div>
                                 <div class="bordered mt25 col-lg-2 text-center col-lg-offset-6 monthname bold">
                                     <span id="nextmonth">May</span>
@@ -72,13 +75,14 @@
                         <div class="col-lg-1">
                             <div class="bordered mt25 topnavigator">
                                 Scroll Right
-                                <span class="glyphicon glyphicon-chevron-right"></span> <span id="futuremonth">June</span>
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                                <span id="futuremonth">June</span>
                             </div>
                         </div>
                     </div>
                     <!--end: this is the header section -->
 
-                    <div class="col-lg-10 eventcontent mt25">
+                    <div id="ServeEvents" class="col-lg-10 eventcontent mt25">
                         <div class="bordered text-center header1">
                             <h4 class="bold">SERVE:
                                 <span> Alfa Cares</span>
@@ -98,7 +102,7 @@
 
                     </div>
 
-                    <div class="col-lg-10 eventcontent mt25">
+                    <div id="GrowEvents" class="col-lg-10 eventcontent mt25">
                         <div class="bordered text-center header2">
                             <h4 class="bold">GROW:
                                 <span> Alfa Cares</span>
@@ -118,7 +122,7 @@
 
                     </div>
 
-                    <div class="col-lg-10 eventcontent mt25">
+                    <div id="BeHealthyEvents" class="col-lg-10 eventcontent mt25">
                         <div class="bordered text-center header3">
                             <h4 class="bold">BE HEALTHY:
                                 <span> Alfa Cares</span>
@@ -130,7 +134,7 @@
                             <div class="eventinfo">event2</div>
                             <div class="eventinfo">event3</div>
                         </div>
-                        <div class="col-lg-5 month1 col-lg-offset-1">
+                        <div class="col-lg-5 month2 col-lg-offset-1">
                             <div class="eventinfo">event1</div>
                             <div class="eventinfo">event2</div>
                             <div class="eventinfo">event3</div>
@@ -158,10 +162,23 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <h4 class="modal-title" id="myModalLabel">Event Title</h4>
+                    <h4 class="modal-title text-center bold text-info">Event Details</h4>
                 </div>
                 <div class="modal-body">
-                    Event Details
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="Title" class="col-sm-2 control-label">Title</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="Title" placeholder="Title">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Date" class="col-sm-2 control-label">Date</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="Title" placeholder="Title">
+                            </div>
+                        </div>
+                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

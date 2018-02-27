@@ -3,6 +3,7 @@
     $(function () {
         attachEvents();
         ServiceContainer.setinfo();
+        displayEventInfoModal();
     });
 
     var attachEvents = function () {
@@ -21,6 +22,13 @@
         // setTimeout(function() {
         //     $('.month1,.month2').fadeIn(1000, "swing");    
         // }, 2000); 
+        if (ServiceContainer.navigatorclicked) {
+            e.stopPropagation();
+            return false;
+        }
+        else {
+            ServiceContainer.navigatorclicked = true;
+        }
         $('.month1,.month2').animate({ opacity: '0' }, 500, 'linear');
 
         setTimeout(function () {
@@ -36,6 +44,7 @@
 var ServiceContainer = function () {
     var months = moment.months();
     var pastmonth = '', currentmonth = '', nextmonth = '', futuremonth = '';
+    var navigatorclicked = false;
 
     var GetAjaxBaseObject = function (method, url) {
         return $.ajax({
@@ -50,6 +59,7 @@ var ServiceContainer = function () {
         GetAjaxBaseObject('GET', './js/event.json').then(function (data) {
             console.log(data);
         }).catch(function () {
+            ServiceContainer.navigatorclicked = false;
             console.log('error');
         });
     };
@@ -68,20 +78,72 @@ var ServiceContainer = function () {
 
     var handleEvents = function (events) {
         if (events != undefined) {
-            var serveDataContent = _.filter(events, { eventTypeId: 1 });
-            var growDataContent = _.filter(events, { eventTypeId: 2 });
-            var beHealthyDataContent = _.filter(events, { eventTypeId: 3 });
+            var serveDataContent = getCategorizedEventData(1, events);
+            var growDataContent = getCategorizedEventData(2, events);
+            var beHealthyDataContent = getCategorizedEventData(3, events);
+
             if (serveDataContent.length > 0) {
-               handleServeEvents
+                handleServeEvents(serveDataContent);
             }
             if (growDataContent.length > 0) {
-                console.log('growing');
+                handleGrowEvents(growDataContent);
             }
             if (beHealthyDataContent.length > 0) {
-                console.log('becoming healthy');
+                handleBeHealthyEvents(beHealthyDataContent);
             }
         }
+        ServiceContainer.navigatorclicked = false;
+    };
+
+    var getCategorizedEventData = function (categoryId, events) {
+
+        return _.chain(events)
+            .filter({ eventTypeId: categoryId })
+            .map(function (event) { return _.pick(event, 'eventId', 'eventTitle', 'eventDate', 'eventTypeId') })
+            .sortBy(events, function (event) { return new moment(event.eventDate); })
+            .value();
+    };
+
+    var handleServeEvents = function (events) {
+        var container = '#ServeEvents';
+        handleEventsDisplay(container, events);
+    };
+
+    var handleGrowEvents = function (events) {
+        var container = '#GrowEvents';
+        handleEventsDisplay(container, events);
+    };
+
+    var handleBeHealthyEvents = function (events) {
+        var container = '#BeHealthyEvents';
+        console.log(events);
+        handleEventsDisplay(container, events);
+    };
+
+    var handleEventsDisplay = function (container, events) {
+        $(container + ' .eventinfo').remove();
+
+        if (events != undefined && events.length > 0) {
+            var currentmonthEvents = _.filter(events, function (event) {
+                return new moment(event.eventDate).format('MMMM') == currentmonth;
+            })
+            var nextmonthEvents = _.filter(events, function (event) {
+                return new moment(event.eventDate).format('MMMM') == nextmonth;
+            })
+
+            _.forEach(currentmonthEvents, function (event) {
+                $(container + ' .month1').append('<div class="eventinfo">' + new moment(event.eventDate).format('DD')
+                    + ' ' + event.eventTitle + '</div>');
+            })
+
+            _.forEach(nextmonthEvents, function (event) {
+                $(container + ' .month2').append('<div class="eventinfo">' + new moment(event.eventDate).format('DD')
+                    + ' ' + event.eventTitle + '</div>');
+            })
+
+        }
     }
+
 
     var setinfo = function (navigationcontrol) {
 
@@ -116,6 +178,7 @@ var ServiceContainer = function () {
         pastmonth: pastmonth,
         currentmonth: currentmonth,
         nextmonth: nextmonth,
-        futuremonth: futuremonth
+        futuremonth: futuremonth,
+        navigatorclicked: navigatorclicked
     }
 }();
